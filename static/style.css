@@ -1,0 +1,135 @@
+body {
+    background-color: #F4E8D0;
+    min-height: 100vh;
+}
+
+.search_ingredients_header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: #F4E8D0;
+}
+
+.search_ingredients_header img {
+  width: 100%;
+  max-width: 100%; 
+  margin-bottom: 20px;
+}
+
+.ingredients-search {
+  max-width: 100%;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 24px;
+  padding: 5px 10px;
+}
+
+.ingredients-search input {
+  width: 375px;
+}
+
+@media (max-width: 767px) {
+  .ingredients-search input {
+    width: 95%;
+  }
+}
+
+
+.header_container {
+    display: flex;
+    align-items: center !important;
+    padding: 5px 40px;
+    /*gap: 20%;*/
+    
+}
+
+.header_column {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    color: #f3735a;
+    text-align: center;
+    display: block !important;
+    width: 100%;
+}
+
+.header_column h1 {
+    text-align: center;
+}
+
+.header_column img {
+  max-width: 100%;
+}
+
+.banner_links {
+  display: flex;
+  background-color: #5e7f64;
+  color: white;
+  align-items: center;
+  padding: 10px 30px;
+  gap: 20px;
+}
+
+.banner_links a {
+    color: white;
+}
+
+.recipe-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #F4E8D0;
+}
+
+.recipe-list li {
+  box-sizing: border-box;
+  margin: 2% 5%;
+  border-radius: 3%;
+  padding: 10px;
+  background-color: #F4E8D0;
+  list-style: none;
+  text-align: center;
+}
+
+.recipe-links {
+  text-decoration: none;
+}
+
+.rubik-font {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 10px; 
+    background-color: #F4E8D0; 
+    color: black;
+    width: 100%; 
+}
+
+.recipe-btn {
+    background-color: #e37861 !important;
+    color: #F4E8D0 !important;
+    font-size: 20px !important;
+    border-radius: 30px !important;
+    padding: 15px 20px !important;
+    margin: 5px 0;
+    display: block;
+    width: 75%;
+    text-align: left;
+}
+
+.recipe-btn:hover {
+    background-color: #eeb467 !important;
+    color: #ffffff !important;
+}

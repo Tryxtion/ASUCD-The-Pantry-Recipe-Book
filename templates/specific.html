@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style> 
+            html, body {
+                margin: 0;
+                padding: 0;
+                min-height: 100vh;
+                background-color: #F4E8D0;
+            }
+            
+            .container {
+                background-color: #F4E8D0;
+                min-height: 100vh;
+                gap: 10px;
+                max-width: 100% !important;
+                padding-left: 150px !important;
+                padding-right: 150px !important;
+            }
+
+            .box {
+                padding: 20px;
+                background: lightblue;
+            }
+            .asucd_green {
+                background-color: #5e7f64 !important;
+            }
+            .asucd_green.navbar-dark * {
+                color: white !important;
+            }
+            
+            .recipe_name {
+                color: #e37861;
+                font-family: "Lucida Handwriting";
+                padding-top: 20px;
+                padding-bottom: 20px;
+                font-size: 50px;
+            }
+
+            .content{
+                color: #e37861;
+                font-weight: bold;
+            }
+
+            .content_list{
+                color: #e37861;
+            }
+
+            .content-container {
+                display: flex;
+                gap: 50px; 
+            }
+
+            .content-column {
+                flex: 1; 
+            }
+
+
+        </style>
+        
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+
+        <title>{{title}}</title>
+        <link rel="icon" type="image/png" href="../static/images/the-pantry-main-logo.png">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark asucd_green">
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-toggle="collapse" 
+                data-target="#navbar"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" id="login" href="/" style="text-decoration: underline;">Home</a>
+                    <a class="nav-item nav-link" id="full" href="{{url_for('full_page')}}" style="text-decoration: underline;"> Full Recipe List</a> 
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+        <h1 class="recipe_name">{{recipe_title}}</h1>
+            <div class="content-container">
+
+                <!-- INGREDIENTS LIST -->
+                <div class="content-column">
+                    <h2 class="content">Ingredients:</h2>
+                    <ul class="content_list">
+                    {% for item in ingredients %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- INSTRUCTIONS LIST -->
+                <div class="content-column">
+                    <h2 class="content">Instructions:</h2>
+                    <ol class="content_list">
+                    {% for item in instructions %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                    </ol>
+                </div>
+    
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ASUCD Pantry Recipe Book</title> 
+    <link rel="icon" type="image/png" href="/static/images/the-pantry-main-logo.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="header_container">
+        <!-- images & other styling -->
+            <div class="header_column">
+                <img src="/static/images/pantry_logo.png" alt="The Pantry Logo", width="350">
+            </div>
+
+            <div class="header_column" style="text-align: center;">
+                <h1>Recipe Book</h1>
+            </div>
+            <div class="header_column"></div> <!-- empty spacer -->
+        </div>
+    </div>
+      
+    <div class="banner_links"> <a href="/">Home</a> 
+        <a href="https://thepantry.ucdavis.edu/">The Pantry Site</a>
+        <a href="https://abrupt-nightshade-be6.notion.site/ASUCD-Pantry-443afebccb974648b313b71a9815001e">Walk-In Menu</a>
+        <a href="https://order.thepantry.ucdavis.edu/">Pre-Order</a>
+    </div>
+    
+    <!--ingredients part-->
+     <div class="search_ingredients_header">
+        <!-- images & other styling -->
+      <img class="banner_image" src="../static/images/Home.png" alt="Search ingredients banner">
+      <div class="ingredients-search">
+          <form class="rubik-font" action="/recipes" method="POST">
+              <label class="ingredients-search" for="user_input_text">Enter Ingredients:</label>
+              <input class="ingredients-search" type="text" name="user_ingredients" placeholder="example: onion, tomato">
+              <button class="ingredients-search" type="submit">Find Recipes</button>
+          </form>
+      </div> 
+    </div>
+    <footer>
+        <p> </p>
+    </footer>
+</body>
+</html>

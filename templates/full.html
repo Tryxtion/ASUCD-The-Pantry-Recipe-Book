@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style> 
+            html, body {
+                margin: 0;
+                padding: 0;
+                min-height: 100vh;
+                background-color: #F4E8D0;
+            }
+            
+            .container {
+                background-color: #F4E8D0;
+                min-height: 100vh;
+                gap: 10px;
+                max-width: 100% !important;
+                padding-left: 150px !important;
+                padding-right: 150px !important;
+            }
+
+            .box {
+                padding: 20px;
+                background: lightblue;
+            }
+            .asucd_green {
+                background-color: #5e7f64 !important;
+            }
+            .asucd_green.navbar-dark * {
+                color: white !important;
+            }
+            
+            .recipe_name {
+                color: #e37861;
+                font-family: "Lucida Handwriting";
+                padding-top: 20px;
+                padding-bottom: 20px;
+                font-size: 50px;
+            }
+
+            .content{
+                color: #e37861;
+                font-weight: bold;
+            }
+
+            .content_list{
+                color: #e37861;
+                background-color:#eeb467;
+                column-count: 2;
+                border-radius: 10px;
+                padding:10px;
+            }
+
+            .content-container {
+                display: flex;
+                gap: 50px; 
+            }
+
+            .content-column {
+                flex: 1; 
+            }
+
+            .list_background{
+                color: #e37861;
+                background-color:#eeb467;
+                column-count: 2;
+                max-width: 100% !important;
+                border-radius: 10px;
+                padding:50px;
+            }
+
+            .recipe-links {
+                text-decoration: none;
+                font-size:20px;
+                color: #F4E8D0;
+            }
+
+            .recipe-links:hover {
+                color: #e37861;
+                text-decoration: underline;
+            }
+
+
+        </style>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+
+        <title>Full Recipe List</title>
+        <link rel="icon" type="image/png" href="../static/images/the-pantry-main-logo.png">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark asucd_green">
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-toggle="collapse" 
+                data-target="#navbar"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" id="login" href="/" style="text-decoration: underline;">Home</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <h1 class="recipe_name">Full Recipe List</h1>
+            <div class="list_background"
+                <ul class="content_list">
+                    {% for item in recipeList %}
+                        <li><a class="recipe-links" href="{{url_for('specific_page', recipeName=item)}}">{{ item }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
