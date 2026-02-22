@@ -9,13 +9,21 @@
                 background-color: #F4E8D0;
             }
             
-            .container {
+            .page-container {
                 background-color: #F4E8D0;
                 min-height: 100vh;
                 gap: 10px;
                 max-width: 100% !important;
                 padding-left: 150px !important;
                 padding-right: 150px !important;
+            }
+
+            @media (max-width:767px) {
+                .page-container{
+                    padding-left: 20px !important;
+                    padding-right: 20px !important;
+                    margin-bottom: 50px !important;
+                }
             }
 
             .box {
@@ -44,6 +52,7 @@
 
             .content_list{
                 color: #e37861;
+                font-weight: 600;
             }
 
             .content-container {
@@ -55,6 +64,13 @@
                 flex: 1; 
             }
 
+            @media (max-width: 767px) {
+                .content-container {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
 
         </style>
         
@@ -62,8 +78,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous"
         />
         <link
@@ -73,27 +89,32 @@
         />
 
         <title>{{title}}</title>
-        <link rel="icon" type="image/png" href="../static/images/the-pantry-main-logo.png">
+        <link rel="icon" type="image/png" href="/static/images/the-pantry-main-logo.png">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark asucd_green">
-            <button 
-                class="navbar-toggler" 
-                type="button" 
-                data-toggle="collapse" 
-                data-target="#navbar"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" id="login" href="/" style="text-decoration: underline;">Home</a>
-                    <a class="nav-item nav-link" id="full" href="{{url_for('full_page')}}" style="text-decoration: underline;"> Full Recipe List</a> 
+            <div class="container-fluid">
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbar"
+                    aria-controls="navbar"
+                    aria-expanded="false"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" id="login" href="/" style="text-decoration: underline;">Home</a>
+                        <a class="nav-item nav-link" id="full" href="{{url_for('full_page')}}" style="text-decoration: underline;"> Full Recipe List</a> 
+                        <a class="nav-item nav-link" id="back" href="{{url_for('back_to_search_results')}}" style="text-decoration: underline;">Back to Search Results</a>
+                    </div>
                 </div>
             </div>
         </nav>
-        <div class="container">
-        <h1 class="recipe_name">{{recipe_title}}</h1>
+        <div class="page-container">
+            <h1 class="recipe_name">{{recipe_title}}</h1>
             <div class="content-container">
 
                 <!-- INGREDIENTS LIST -->
@@ -118,5 +139,6 @@
     
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>
 </html>

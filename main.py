@@ -10,25 +10,23 @@ available_recipes = []
 def homepage():
     return render_template("index.html")
 
-# @app.route("/ingredients")
-# def search_ingredients():
-#     return render_template("ingredients.html")
-
-
 # Route to handle the form data
 @app.route('/recipes', methods=['POST'])
 def process_data():
+    global available_recipes
+
+    # update available_recipes
     user_ingredients = request.form.get('user_ingredients') or ""
 
     available_recipes = readcsv.getRecipes(user_ingredients)
     
     return render_template("recipes.html", recipes=available_recipes)
 
-# @app.route('/recipes', methods=['POST'])
-# def recipes():
-#     return render_template("recipes.html")
+@app.route('/recipes')
+def back_to_search_results():
+    global available_recipes
+    return render_template("recipes.html", recipes=available_recipes)
 
-# specific recipe pages
 @app.route("/templates/specific/<recipeName>")
 def specific_page(recipeName):
 

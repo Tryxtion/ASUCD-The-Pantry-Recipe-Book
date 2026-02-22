@@ -27,6 +27,25 @@ body {
   padding: 5px 10px;
 }
 
+
+
+.ingredients-search-button {
+    background-color: #e37861 !important;
+    color: #F4E8D0 !important;
+    font-size: 20px !important;
+    border-radius: 30px !important;
+    padding: 15px 20px !important;
+    margin: 5px 0;
+    text-align: center;
+    border: none !important;
+}
+
+.ingredients-search-button:hover {
+    background-color: #eeb467 !important;
+    color: #ffffff !important;
+}
+
+
 .ingredients-search input {
   width: 375px;
 }
@@ -133,3 +152,4 @@ footer {
     background-color: #eeb467 !important;
     color: #ffffff !important;
 }
+
